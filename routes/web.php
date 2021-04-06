@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view("Login");
+} );
+Route::get('/admin/{data?}', 'ControllerHello@HeloAdmin' )-> middleware("checkAge");
 
-Route::get('{id?}', 'Helo@show' );
 

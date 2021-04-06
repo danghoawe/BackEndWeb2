@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Helo extends Controller
+class ControllerHello extends Controller
 {
     public function show($id="Trang-Chu")
     {
@@ -37,5 +37,9 @@ class Helo extends Controller
     public function showUser($id="test")
     {
         return "user ".$id;
+    }
+    public function HeloAdmin(Request $request)
+    {
+        return "Helo". $request->input('username');
     }
 }
