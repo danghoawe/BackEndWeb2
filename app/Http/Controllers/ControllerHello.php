@@ -3,40 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ControllerHello extends Controller
 {
-    public function show($id="Trang-Chu")
+    
+    public function show($id="Home")
     {
-        if($id == "Trang-Chu")
-        {
-            return view('TrangChu');
-        }
-        if($id == "Gioi-Thieu")
-        {
-            return view('GioiThieu');
-        }
-        if($id == "Ban")
-        {
-            return view('Ban');
-        }
-        if($id == "Ghe")
-        {
-            return view('Ghe');
-        }
-        if($id == "San-Pham")
-        {
-            return view('SanPham');
-        }
-        if($id == "Lien-He")
-        {
-            return view('LienHe');
-        }
-
+            $products = Product::all();
+            return view('pages.'.$id,['products'=> $products]);
     }
-    public function showUser($id="test")
+    public function SingleProduct()
     {
-        return "user ".$id;
+        $products = Product::all();
+        return view('pages.SingleProduct',['products'=> $products]);
     }
     public function HeloAdmin(Request $request)
     {
