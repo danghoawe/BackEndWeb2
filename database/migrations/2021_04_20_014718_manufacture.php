@@ -14,7 +14,7 @@ class Manufacture extends Migration
     public function up()
     {
         //
-        Schema::create('manufacture', function (Blueprint $table) {
+        Schema::create('manufactures', function (Blueprint $table) {
             $table->bigIncrements('manu_id');
             $table->string('nameManufacture', 100);
         });
@@ -27,6 +27,6 @@ class Manufacture extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('manufacture');
+         Schema::dropIfExists('manufactures');
     }
 }

@@ -422,6 +422,12 @@ z-index: 999;}
   margin-right: 5px;
   text-decoration: none;
 }
+.title{
+    color: #24191a;
+    font-weight: 700;
+    margin-right: 5px;
+    text-decoration: none;
+  }
 .product-hover a i.fa {
     margin-right: 5px;
 }

@@ -13,7 +13,7 @@ class Protype extends Migration
      */
     public function up()
     {
-        Schema::create('protype', function (Blueprint $table) {
+        Schema::create('protypes', function (Blueprint $table) {
             $table->bigIncrements('protype_id');
             $table->string('nameProtype', 100);
         });
@@ -26,6 +26,6 @@ class Protype extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('protype');
+        Schema::dropIfExists('protypes');
     }
 }

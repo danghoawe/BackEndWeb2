@@ -20,7 +20,7 @@ class Product extends Migration
             $table->integer('idManufacture' )->references('manu_id')->on('manufacture');
             $table->integer('idProtype' )->references('protype_id')->on('protype');
             $table->float('price',50);
-            $table->string('description');
+            $table->longText('description');
             $table->string('image',500);
             $table->integer('feature');
         });
