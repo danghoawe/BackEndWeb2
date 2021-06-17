@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('product.layouts.master')
 @section('panel')
 <div class="product-big-title-area">
         <div class="container">

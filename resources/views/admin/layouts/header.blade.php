@@ -202,46 +202,36 @@
         </li>
 
         <li class="dropdown notification-list">
+        @if(Auth::check())
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                <img src="admin_asset/assets\images\users\avatar-1.jpg" alt="user-image" class="rounded-circle">
+                <img src="admin_asset/assets\images\users\avatar-1.jpg" alt="user-image" width="30px" class="rounded-circle">
                 <span class="pro-user-name ml-1">
-                    Thompson <i class="mdi mdi-chevron-down"></i>
+                    {{Auth::user()->username}} <i class="mdi mdi-chevron-down"></i>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                 <!-- item-->
                 <div class="dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome !</h6>
+                    <h6 class="text-overflow m-0">Welcome {{Auth::user()->username}} !</h6>
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="admin/user/edit/{{Auth::user()->id}}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-outline"></i>
                     <span>Profile</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-settings-outline"></i>
-                    <span>Settings</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-lock-outline"></i>
-                    <span>Lock Screen</span>
                 </a>
 
                 <div class="dropdown-divider"></div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="admin/logout" class="dropdown-item notify-item">
                     <i class="mdi mdi-logout-variant"></i>
                     <span>Logout</span>
                 </a>
 
             </div>
+        @endif
         </li>
 
         <li class="dropdown notification-list">

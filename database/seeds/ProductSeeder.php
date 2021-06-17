@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
             'amount'=> 200,
             'idManufacture'=> 1,
             'idProtype'=>1,
-            'image'=>'iphone8-plus.png',
+            'image'=>'iphone8-plus.jpg',
             'price'=> 6590000,
             'description'=>'Bộ đôi iPhone 8 và iPhone 8 Plus đều sở hữu thiết kế kim loại chắc chắn kết hợp với mặt kính cường lực sang trọng, có khả năng chống nước, bụi bẩn đạt IP67. Tổng thể trên iPhone 8 khá nhỏ gọn, với màn hình 4.7 inch, giúp bạn dễ dàng thao tác bằng 1 tay. Trong khi đó iPhone 8 Plus có phần lớn hơn hẳn khi sở hữu màn hình lên đến 5.5 inch, điều này mang đến trải nghiệm tốt hơn khi xem phim, chơi game hay giải trí.',
             'feature'=> 1,
@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
             'image'=>'IPHONE 12 64GB.jpg',
             'price'=> 19290000,
             'description'=>'iPhone 12 Pro Max là chiếc iPhone có màn hình lớn nhất từ trước tới nay, 6,7 inch. Độ phân giải của màn hình cũng chưa từng iPhone nào đạt được, hơn 3,5 triệu điểm ảnh. Màn hình Super Retina XDR với tấm nền OLED cũng hứa hẹn cho màu sắc rực rỡ, màu đen sâu. Thêm vào đó, màn hình của tất cả mẫu máy iPhone 12 đều được bảo vệ bởi Ceramic Shield, gấp 4 lần độ cứng cáp và hiệu suất đánh rơi so với bình thường.',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Samsung Galaxy M51",
@@ -68,7 +68,7 @@ class ProductSeeder extends Seeder
             Bộ nhớ trong:	128 GB
             SIM:	2 Nano SIM hoặc 1 Nano SIM + 1 eSIM, Hỗ trợ 5G
             Pin, Sạc:	4000 mAh, 25 W',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Samsung Galaxy A32",
@@ -462,7 +462,7 @@ class ProductSeeder extends Seeder
             Thời gian sử dụng 11 giờ và 22 giờ cùng hộp sạc.
             Sạc nhanh 3 phút cung cấp đến 1 giờ sử dụng.
             Có thể sạc ngay với thiết bị sạc không dây chuẩn Qi bất kì.',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Tai nghe Bluetooth True Wireless Galaxy Buds Pro",
@@ -493,7 +493,7 @@ class ProductSeeder extends Seeder
             Phối ghép với 2 thiết bị cùng lúc.
             Âm thanh rõ ràng với công nghệ giảm tạp âm.
             Sử dụng kéo dài đến 9 tiếng, sạc trong 2 tiếng.',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Tai nghe Có Dây Samsung EG920B",
@@ -521,7 +521,7 @@ class ProductSeeder extends Seeder
             Kết nối nam châm giữa hai đầu tai nghe của Level U sẽ giữ tai nghe khi không sử dụng.
             Dung lượng pin 200 mAh (lõi pin Li-Ion). Thời gian sạc trung bình khoảng 3 giờ.
             Sản phẩm chính hãng Samsung.',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
 
         //Realme
@@ -670,7 +670,7 @@ class ProductSeeder extends Seeder
             Custom acoustic waveguide for a 360º sound field
             Four-microphone design for far-field Siri
             Multiroom audio with AirPlay 2, Stereo pair capable',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Apple HomePod Mini (White)",
@@ -695,7 +695,7 @@ class ProductSeeder extends Seeder
             'description'=>'A8 chip. The biggest brain ever in a speaker.
             Deep bass. Engineered to lower the boom.
             Seven tweeters. Amazing sound from every angle.',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Loa HomePod (White)",
@@ -707,7 +707,7 @@ class ProductSeeder extends Seeder
             'description'=>'A8 chip. The biggest brain ever in a speaker.
             Deep bass. Engineered to lower the boom.
             Seven tweeters. Amazing sound from every angle.',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         
         //Samsung
@@ -1078,7 +1078,7 @@ class ProductSeeder extends Seeder
             Kích thước:
             
             Dày 15.6 mm1.4 kg',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Laptop Apple MacBook Pro M1 2020 16GB/512GB (Z11C)",
@@ -1156,7 +1156,7 @@ class ProductSeeder extends Seeder
             Kích thước:
             
             Dày 4.1 đến 15.6 mm1.25 kg',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Laptop Apple MacBook Air M1 2020 8GB/512GB (MGN73SA/A)",
@@ -1236,7 +1236,7 @@ class ProductSeeder extends Seeder
             Kích thước:
             
             Dày 21.7 mm2.3 kg',
-            'feature'=> 0,
+            'feature'=> 1,
         ]);
         DB::table('products')->insert([
             'nameProduct' => "Laptop MSI GF65 Thin 10UE i5 10500H/16GB/512GB/6GB RTX3060 Max-Q/144Hz/Balo/Chuột/Win10 (297VN)",

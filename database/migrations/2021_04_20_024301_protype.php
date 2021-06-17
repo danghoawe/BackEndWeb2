@@ -16,6 +16,7 @@ class Protype extends Migration
         Schema::create('protypes', function (Blueprint $table) {
             $table->bigIncrements('protype_id');
             $table->string('nameProtype', 100);
+            $table->timestamps();
         });
     }
 

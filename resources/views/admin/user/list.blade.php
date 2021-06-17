@@ -31,6 +31,11 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title mb-4">Basic example</h4>
+                            @if(session('notification'))
+                            <div class="alert alert-primary">
+                                {{session('notification')}}
+                            </div>
+                            @endif
                             <div class="table-responsive">
                                 <table class="table mb-0">
                                     <thead>
@@ -40,6 +45,7 @@
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>Email</th>
+                                            <th>Role</th>
                                             <th>BirthDay</th>
                                             <th>Address</th>
                                             <th>CMND</th>
@@ -55,19 +61,39 @@
                                             <td>{{$value->firstName}}</td>
                                             <td>{{$value->lastName}}</td>
                                             <td>{{$value->Email}}</td>
+                                            <td>
+                                                @if($value->role == 1)
+                                                {{"Admin"}}
+                                                @else
+                                                {{"User"}}
+                                                @endif
+                                            </td>
                                             <td>{{$value->birthDay}}</td>
                                             <td>{{$value->address}}</td>
                                             <td>{{$value->CMND}}</td>
                                             <td>{{$value->Numberphone}}</td>
                                             <td>
-                                                <a href="admin/user/edit/{{$value->id}}"class="btn btn-success btn-mini">Edit</a>
-                                                <a href="admin/user/delete/{{$value->id}}"class="btn btn-danger btn-mini">Delete</a>
+                                                <a href="admin/user/edit/{{$value->id}}"
+                                                    class="btn btn-success btn-mini">Edit</a>
+                                                <a href="admin/user/delete/{{$value->id}}"
+                                                    class="btn btn-danger btn-mini">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
 
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-pagination text-center">
+                                    <nav>
+                                        <ul class="pagination">
+                                            {{$user->links()}}
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>

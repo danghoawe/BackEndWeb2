@@ -30,65 +30,90 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title mb-4">Edit Product</h4>
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $err)
+                                    {{$err}}<br>
+                                    @endforeach
+                                </div>
+                            @endif
 
-                            <form class="parsley-examples" action="#">
+                            @if(session('notification'))
+                                <div class="alert alert-primary">
+                                    {{session('notification')}}
+                                </div>
+                            @endif
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{session('error')}}
+                                </div>
+                            @endif
+                            <form class="parsley-examples" action="admin/product/edit/{{$product->product_id}}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                 <div class="form-group">
-                                    <label for="nameProtype">Name Protype<span class="text-danger">*</span></label>
-                                    <input type="text" name="nick" parsley-trigger="change" required=""
-                                        placeholder="Enter Name Protype" class="form-control" id="nameProtype">
+                                    <label for="nameProduct">Name Product<span class="text-danger">*</span></label>
+                                    <input type="text" name="nameProduct" parsley-trigger="change" required=""
+                                        placeholder="Enter Name Product" class="form-control" value="{{$product->nameProduct}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="protype_id">Amount<span class="text-danger">*</span></label>
-                                    <input type="text" name="protype_id" parsley-trigger="change" required=""
-                                        placeholder="Enter Protype ID" class="form-control" id="protype_id">
+                                    <input type="text" name="amount" parsley-trigger="change" required=""
+                                        placeholder="Enter Amount" class="form-control" value="{{$product->amount}}">
                                 </div>
                                 <div class="form-group">
+
                                     <label class="control-label">Choose a manufacture:</label>
-                                    <select name="idManufacture" id="cate">
-                                        <option value="1">Apple</option>
-                                        <option value="2">Sam Sung</option>
-                                        <option value="3">Realme</option>
-                                    </select> *
+                                    <select class="form-control" name="Manufacture" id="cate">
+                                        @foreach($manufacture as $value)
+                                        <option @if($value->manu_id == $product->idManufacture)
+                                        {{"selected"}}
+                                        @endif
+                                         value="{{$value->manu_id}}">{{$value->nameManufacture}}</option>
+                                        @endforeach
+                                    </select> 
+
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Choose a protype:</label>
-
-                                    <select name="idProtype" id="subcate">
-                                        <option value="1">Phone</option>
-                                        <option value="2">Headphone</option>
-                                        <option value="3">Speaker</option>
-                                    </select> *
+                                    <select class="form-control" name="Protype" id="subcate">
+                                        @foreach($protype as $value)
+                                        <option 
+                                        @if($value->protype_id == $product->idProtype)
+                                        {{"selected"}}
+                                        @endif
+                                        value="{{$value->protype_id}}">{{$value->nameProtype}}</option>
+                                        @endforeach
+                                    </select> 
 
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Choose an image :</label>
-
-                                    <input type="file" name="fileUpload" id="fileUpload" accept="image/*" required>
+                                    <img width="200" src="img/{{$product->image}}"/>
+                                    <input type="file" name="image" class="form-control" >
 
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Price<span class="text-danger">*</span></label>
                                     <input type="text" name="price" parsley-trigger="change" required=""
-                                        placeholder="Enter Price" class="form-control" id="price">
+                                        placeholder="Enter Price" class="form-control" value="{{$product->price}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description<span class="text-danger">*</span></label>
                                     <textarea type="text" name="description" parsley-trigger="change" required=""
-                                        placeholder="Enter Description" class="form-control"
-                                        id="description"></textarea>
+                                        placeholder="Enter Description" rows="4" class="form-control">{{$product->description}}</textarea>
                                 </div>
                                 <div class="control-group">
                                     <label for="feature">Feature<span class="text-danger">*</span></label>
                                     <input type="number" name="feature" min="0" max="1" parsley-trigger="change"
-                                        required="" placeholder="Enter Feature" class="form-control" id="feature">
+                                        required="" placeholder="Enter Feature" class="form-control" value="{{$product->feature}}">
                                 </div>
-                                
+
                                 <div class="form-group text-right mb-0">
                                     <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
                                         Submit
                                     </button>
-                                    <button type="reset" class="btn btn-secondary waves-effect waves-light">
+                                    <button type="reset" class="btn btn-secondary waves-effect waves-light" onclick="window.location='{{ URL::previous() }}'">
                                         Cancel
                                     </button>
                                 </div>

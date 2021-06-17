@@ -33,9 +33,9 @@
                             <h4 class="header-title mb-4">Basic example</h4>
                             <div class="table-responsive">
                                 @if(session('notification'))
-                                    <div class="alert alert-primary" >
-                                        {{session('notification')}}
-                                    </div>
+                                <div class="alert alert-primary">
+                                    {{session('notification')}}
+                                </div>
                                 @endif
                                 <table class="table mb-0">
                                     <thead>
@@ -52,13 +52,27 @@
                                             <td>{{$value->nameProtype}}</td>
 
                                             <td>
-                                                <a href="admin/protype/edit/{{$value->protype_id}}"class="btn btn-success btn-mini">Edit</a>
-                                                <a href="admin/protype/delete/{{$value->protype_id}}"class="btn btn-danger btn-mini">Delete</a>
+                                                <a href="admin/protype/edit/{{$value->protype_id}}"
+                                                    class="btn btn-success btn-mini">Edit</a>
+                                                <a href="admin/protype/delete/{{$value->protype_id}}"
+                                                    class="btn btn-danger btn-mini"
+                                                    onclick="return confirm('Bạn muốn xóa item này ?');">Delete</a>
                                             </td>
-                                        </tr>                                      
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-pagination text-center">
+                                    <nav>
+                                        <ul class="pagination">
+                                            {{$protype->links()}}
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>

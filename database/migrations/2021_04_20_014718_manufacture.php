@@ -17,6 +17,7 @@ class Manufacture extends Migration
         Schema::create('manufactures', function (Blueprint $table) {
             $table->bigIncrements('manu_id');
             $table->string('nameManufacture', 100);
+            $table->timestamps();
         });
     }
 

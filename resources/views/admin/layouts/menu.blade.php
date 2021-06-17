@@ -16,7 +16,7 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="admin/product/add">Add Product</a></li>
-                        <li><a href="admin/product/edit">Edit Product</a></li>
+
                         <li><a href="admin/product/list">List Product</a></li>
                     </ul>
                 </li>
@@ -29,7 +29,7 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="admin/manufacture/add">Add Manufacture</a></li>
-                        <li><a href="admin/manufacture/edit">Edit Manufacture</a></li>
+
                         <li><a href="admin/manufacture/list">List Manufacture</a></li>
                     </ul>
                 </li>
@@ -42,7 +42,7 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="admin/protype/add">Add Protype</a></li>
-                        <li><a href="admin/protype/edit">Edit Protype</a></li>
+
                         <li><a href="admin/protype/list">List Protype</a></li>
                     </ul>
                 </li>
@@ -54,7 +54,7 @@
                         <!-- <span class="badge badge-danger badge-pill float-right"> 8 </span> -->
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="admin/user/edit">Edit User</a></li>
+                        <li><a href="admin/user/add">Add User</a></li>
                         <li><a href="admin/user/list">Danh sách User</a></li>
                     </ul>
                 </li>

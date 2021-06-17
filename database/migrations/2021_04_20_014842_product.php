@@ -23,6 +23,7 @@ class Product extends Migration
             $table->longText('description');
             $table->string('image',500);
             $table->integer('feature');
+            $table->timestamps();
         });
     }
 

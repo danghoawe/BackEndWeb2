@@ -31,6 +31,11 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title mb-4">Basic example</h4>
+                            @if(session('notification'))
+                                <div class="alert alert-primary">
+                                    {{session('notification')}}
+                                </div>
+                            @endif
                             <div class="table-responsive">
                                 <table class="table mb-0">
                                     <thead>
@@ -46,14 +51,26 @@
                                             <th scope="row">{{$value->manu_id}}</th>
                                             <td>{{$value->nameManufacture}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-success btn-mini">Edit</a>
-                                                <a href="#" class="btn btn-danger btn-mini">Delete</a>
+                                                <a href="admin/manufacture/edit/{{$value->manu_id}}" class="btn btn-success btn-mini">Edit</a>
+                                                <a href="admin/manufacture/delete/{{$value->manu_id}}" class="btn btn-danger btn-mini"
+                                                    onclick="return confirm('Bạn muốn xóa item này ?');">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
 
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-pagination text-center">
+                                    <nav>
+                                        <ul class="pagination">
+                                            {{$manufacture->links()}}
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>

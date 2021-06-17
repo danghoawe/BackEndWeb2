@@ -16,4 +16,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Protype','idProtype');
     }
+
+    public function Comment()
+    {
+        return $this->hasMany('App\Comment','product_id','product_id');
+    }
 }

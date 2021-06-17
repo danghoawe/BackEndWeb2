@@ -9,9 +9,11 @@ class ProtypeController extends Controller
 {
     //
     public function getList(){
-        $protype = Protype::all();
+        $protype = Protype::paginate(5);
         return view('admin.protype.list',['protype'=>$protype]);
     }
+
+    
 
     public function getEdit($protype_id){
         $protype = Protype::find($protype_id);

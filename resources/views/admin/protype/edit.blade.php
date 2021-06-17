@@ -65,7 +65,8 @@
                                     <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
                                         Submit
                                     </button>
-                                    <button type="reset" class="btn btn-secondary waves-effect waves-light">
+                                    <button type="reset" class="btn btn-secondary waves-effect waves-light"
+                                    onclick="window.location='{{ URL::previous() }}'">
                                         Cancel
                                     </button>
                                 </div>

@@ -30,6 +30,11 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title mb-4">Product</h4>
+                            @if(session('notification'))
+                            <div class="alert alert-primary">
+                                {{session('notification')}}
+                            </div>
+                            @endif
                             <div class="table-responsive">
                                 <table class="table mb-0">
                                     <thead>
@@ -49,23 +54,37 @@
                                     <tbody>
                                         @foreach($product as $value)
                                         <tr>
-                                            <th >{{$value->product_id}}</th>
+                                            <th>{{$value->product_id}}</th>
                                             <td>{{$value->nameProduct}}</td>
                                             <td>{{$value->amount}}</td>
-                                            <td>{{$value->idManufacture}}</td>
-                                            <td>{{$value->idProtype}}</td>
+                                            <td>{{$value->Manufacture->nameManufacture}}</td>
+                                            <td>{{$value->Protype->nameProtype}}</td>
                                             <td>{{number_format( $value->price)}}</td>
                                             <td>{{substr($value->description,0,200)}}...</td>
-                                            <td><img width="200" src="img/{{$value->image}}"/> </td>
+                                            <td><img width="200" src="img/{{$value->image}}" /> </td>
                                             <td>{{$value->feature}}</td>
                                             <td>
-                                                <a href="#"class="btn btn-success btn-mini">Edit</a>
-                                                <a href="#"class="btn btn-danger btn-mini">Delete</a>
+                                                <a href="admin/product/edit/{{$value->product_id}}"
+                                                    class="btn btn-success btn-mini">Edit</a>
+                                                <a href="admin/product/delete/{{$value->product_id}}"
+                                                    class="btn btn-danger btn-mini"
+                                                    onclick="return confirm('Bạn muốn xóa item này ?');">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-pagination text-center">
+                                    <nav>
+                                        <ul class="pagination">
+                                            {{$product->links()}}
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>

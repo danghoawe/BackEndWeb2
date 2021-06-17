@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             'firstName' => 'Gia',
             'lastName' => 'Huy',
             'birthDay' => '2001/11/10',
+            'role' => '1',
             'address'=>"HCM",
             'CMND'=>"251265369",
             'Numberphone'=>'0797842160'
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
             'firstName' => 'Thanh',
             'lastName' => 'Dat',
             'birthDay' => '2001/1/20',
+            'role' => '0',
             'address'=>"HCM",
             'CMND'=>"251879369",
             'Numberphone'=>'0791232160'

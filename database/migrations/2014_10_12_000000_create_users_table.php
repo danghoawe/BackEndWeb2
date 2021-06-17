@@ -20,10 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('firstName', 100);
             $table->string('lastName', 100);
             $table->string('Email', 100);
+            $table->string('role');
             $table->date('birthDay');
             $table->string('address');
             $table->string('CMND');
             $table->string('Numberphone');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamps();
         });
     }
 

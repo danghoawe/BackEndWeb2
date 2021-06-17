@@ -30,22 +30,26 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title mb-4">Add Manufacture</h4>
-
-                            <form class="parsley-examples" action="#">
-                                <div class="form-group">
-                                    <label for="protype_id">Manufacture ID<span class="text-danger">*</span></label>
-                                    <input type="text" name="protype_id" parsley-trigger="change" required="" placeholder="Enter Manufacture ID"
-                                        class="form-control" id="protype_id">
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $err)
+                                    {{$err}}<br>
+                                    @endforeach
                                 </div>
+                            @endif
 
+                            @if(session('notification'))
+                                <div class="alert alert-primary">
+                                    {{session('notification')}}
+                                </div>
+                            @endif
+                            <form class="parsley-examples" action="admin/manufacture/add" method="POST">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                 <div class="form-group">
                                     <label for="nameProtype">Name Manufacture<span class="text-danger">*</span></label>
-                                    <input type="text" name="nick" parsley-trigger="change" required=""
-                                        placeholder="Enter Name Manufacture" class="form-control" id="nameProtype">
+                                    <input type="text" name="nameManufacture" parsley-trigger="change" required=""
+                                        placeholder="Enter Name Manufacture" class="form-control">
                                 </div>
-
-                                
-                                
 
                                 <div class="form-group text-right mb-0">
                                     <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
